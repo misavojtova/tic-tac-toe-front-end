@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Monoton&family=Raleway:wght@300&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+}
+:root {
+  --main-bg: linear-gradient(to top, #09203f 0%, #537895 100%);
+  --box-color: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
+  --box-inset-shadow: inset -60px 15px 70px -20px rgb(0 0 0 / 40%),
+    10px 13px 6px -4px rgb(0 0 0 / 32%);
+  --reset-btn: linear-gradient(
+    90deg,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(148, 187, 233, 1) 100%
+  );
+}
+.message {
+  color: white;
+}
+.tic-tac-title {
+  font-family: "Monoton", cursive;
+  position: absolute;
+  bottom: 1%;
+  right: 1%;
+  font-size: 15px;
+  color: #b9bcc5;
+}
+.tic-tac-con {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: var(--main-bg);
+  gap: 10%;
+}
+
+.main-grid {
+  display: grid;
+  width: 50vh;
+  height: 50vh;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 5%;
+}
+
+.box {
+  display: flex;
+  border-radius: 50%;
+  background: var(--box-color);
+  box-shadow: var(--box-inset-shadow);
+  justify-content: center;
+  align-items: center;
+  font-size: 5rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+.eight {
+  grid-area: "eight";
+}
+
+.box:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+div[disabled] {
+  pointer-events: none;
+  opacity: 0.4;
+}
+svg.cross path {
+  stroke: #9a538d;
+}
+svg.circle {
+  color: #6271b2;
+}
+.reset-btn {
+  width: 50vh;
+  height: 5vh;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgb(0 0 0 / 10%);
+  backdrop-filter: blur(3.3px);
+  -webkit-backdrop-filter: blur(3.3px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+}
+.reset-btn-title {
+  font-size: 1rem;
+  letter-spacing: 5px;
+}
+
+.reset-btn:hover {
+  transform: scale(1.03);
+}
