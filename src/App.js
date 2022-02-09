@@ -17,9 +17,7 @@ function App() {
   });
 
   const getArr = async () => {
-    const { data } = await axios.get(
-      "https://tic-tac-toe-apply.herokuapp.com/api/tic"
-    );
+    const { data } = await axios.get("http://localhost:5000/api/tic");
     setInput(data);
   };
   useEffect(() => {
@@ -33,7 +31,7 @@ function App() {
       setDisabled(false);
       setClicked(false);
       setMessage("Player 1 ( X ) . .  START THE GAME!");
-      await axios.post("https://tic-tac-toe-apply.herokuapp.com/api/tic");
+      await axios.post("http://localhost:5000/api/tic");
       getArr();
     } catch (error) {
       console.log(error);
@@ -47,18 +45,13 @@ function App() {
         ? { player: "Player 1", input: "X" }
         : { player: "Player 2", input: "O" };
 
-      const upd = await axios.patch(
-        `https://tic-tac-toe-apply.herokuapp.com/api/tic/${id}`,
-        {
-          inputData,
-        }
-      );
+      const upd = await axios.patch(`http://localhost:5000/api/tic/${id}`, {
+        inputData,
+      });
       if (upd.data.code === "852963") return;
       getArr();
 
-      const res = await axios.get(
-        `https://tic-tac-toe-apply.herokuapp.com/api/tic/winner`
-      );
+      const res = await axios.get(`http://localhost:5000/api/tic/winner`);
       res.data.code === "123456" && setDisabled(true);
       setMessage(res.data.msg);
       res.data.code === "654321" && setDisabled(true);
