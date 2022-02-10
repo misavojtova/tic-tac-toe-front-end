@@ -107,6 +107,11 @@ svg.circle {
     width: 48vh;
   }
 
+  .tic-tac-title {
+    top: 1%;
+    bottom: initial;
+  }
+
   .box {
     font-size: 4rem;
   }
