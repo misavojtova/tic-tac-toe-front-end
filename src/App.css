@@ -17,6 +17,7 @@
 }
 .message {
   color: white;
+  text-align: center;
 }
 .tic-tac-title {
   font-family: "Monoton", cursive;
@@ -95,4 +96,18 @@ svg.circle {
 
 .reset-btn:hover {
   transform: scale(1.03);
+}
+
+@media screen and (max-width: 400px) {
+  .main-grid {
+    height: 48vh;
+    width: 48vh;
+  }
+
+  .box {
+    font-size: 4rem;
+  }
+  .reset-btn {
+    width: 45vh;
+  }
 }
