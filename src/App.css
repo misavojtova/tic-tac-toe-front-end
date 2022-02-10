@@ -98,7 +98,7 @@ svg.circle {
   transform: scale(1.03);
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .message-wrap {
     width: 70%;
   }
