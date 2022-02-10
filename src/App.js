@@ -74,7 +74,7 @@ function App() {
   return (
     <div className='tic-tac-con'>
       <h1 className='tic-tac-title'>Tic Tac Toe</h1>
-      <div>
+      <div className='message-wrap'>
         <h2 className='message'>{message}</h2>
       </div>
 

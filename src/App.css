@@ -99,6 +99,9 @@ svg.circle {
 }
 
 @media screen and (max-width: 400px) {
+  .message-wrap {
+    width: 70%;
+  }
   .main-grid {
     height: 48vh;
     width: 48vh;
